@@ -313,7 +313,7 @@ def evaluate(encoder, decoder, sentence, max_length=MAX_LENGTH):
     input_length    = input_variable.size()[0]
     encoder_hidden  = encoder.init_hidden()
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-    encoder_outputs = encoder_ouputs.cuda() if use_cuda else encoder_ouputs
+    encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
 
     for ei in range(input_length):
         encoder_output, encoder_hidden = encoder(input_variable[ei], encoder_hidden)
